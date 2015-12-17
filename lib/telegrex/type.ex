@@ -36,8 +36,8 @@ defmodule Telegrex.Type do
     ---------: | :-----: | -----------
     id	       | Integer | Unique identifier for this user or bot
     first_name | String	 | User's or bot's first name
-    last_name	 | String	 | Optional. User's or bot's last name
-    username	 | String	 | Optional. User's or bot's username
+    last_name  | String  | Optional. User's or bot's last name
+    username   | String  | Optional. User's or bot's username
 
     """
     @type t :: %User{id: integer, first_name: binary, last_name: binary,
@@ -57,8 +57,8 @@ defmodule Telegrex.Type do
     type       | String  | Type of chat, can be either `private`, `group`, \
                            `supergroup` or `channel`
     first_name | String	 | User's or bot's first name
-    last_name	 | String	 | Optional. User's or bot's last name
-    username	 | String	 | Optional. User's or bot's username
+    last_name  | String  | Optional. User's or bot's last name
+    username   | String  | Optional. User's or bot's username
 
     """
     @type t :: %Chat{id: integer, type: binary, title: binary, username: binary,
@@ -87,12 +87,12 @@ defmodule Telegrex.Type do
                                                              sent to channels
     date                     | Integer                     | Date the message was \
                                                              sent in Unix time
-    chat	                   | `Telegrex.Type.Chat`	       | Conversation the \
+    chat                     | `Telegrex.Type.Chat`        | Conversation the \
                                                              message belongs to
     forward_from	           | `Telegrex.Type.User`        | Optional. For forwarded \
                                                              messages, sender of the \
                                                              original message
-    forward_date	           | Integer                     | Optional. For forwarded \
+    forward_date             | Integer                     | Optional. For forwarded \
                                                              messages, date the \
                                                              original message was \
                                                              sent in Unix time
