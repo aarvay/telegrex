@@ -89,76 +89,76 @@ defmodule Telegrex.Type do
                                                              sent in Unix time
     chat                     | `Telegrex.Type.Chat`        | Conversation the \
                                                              message belongs to
-    forward_from	           | `Telegrex.Type.User`        | Optional. For forwarded \
+    forward_from             | `Telegrex.Type.User`        | Optional. For forwarded \
                                                              messages, sender of the \
                                                              original message
     forward_date             | Integer                     | Optional. For forwarded \
                                                              messages, date the \
                                                              original message was \
                                                              sent in Unix time
-    reply_to_message	       | Message                     | Optional. For replies, \
+    reply_to_message         | Message                      | Optional. For replies, \
                                                              the original message. \
                                                              Note that the Message \
                                                              object in this field \
                                                              will not contain further \
                                                              reply_to_message fields \
                                                              even if it itself is a reply.
-    text	                   | String	                     | Optional. For text messages, \
+    text                     | String                       | Optional. For text messages, \
                                                              the actual UTF-8 text \
                                                              of the message
-    audio	                   | Audio	                     | Optional. Message is \
+    audio                    | Audio                       | Optional. Message is \
                                                              an audio file, information \
                                                              about the file
-    document	               | `Telegrex.Type.Document`	   | Optional. Message is a \
+    document                 | `Telegrex.Type.Document`    | Optional. Message is a \
                                                              general file, information \
                                                              about the file
-    photo	                   | [`Telegrex.Type.PhotoSize`] | Optional. Message is a \
+    photo                    | [`Telegrex.Type.PhotoSize`] | Optional. Message is a \
                                                              photo, available sizes \
                                                              of the photo
-    sticker	                 | `Telegrex.Type.Sticker`	   | Optional. Message is a \
+    sticker                  | `Telegrex.Type.Sticker`     | Optional. Message is a \
                                                              sticker, information \
                                                              about the sticker
-    video	                   | `Telegrex.Type.Video`	     | Optional. Message is a \
+    video                    | `Telegrex.Type.Video`       | Optional. Message is a \
                                                              video, information \
                                                              about the video
-    voice	                   | `Telegrex.Type.Voice`	     | Optional. Message is a \
+    voice                    | `Telegrex.Type.Voice`       | Optional. Message is a \
                                                              voice message, information \
                                                              about the file
-    caption	                 | String	                     | Optional. Caption for \
+    caption                  | String                      | Optional. Caption for \
                                                              the photo or video
-    contact	                 | `Telegrex.Type.Contact`	   | Optional. Message is a \
+    contact                  | `Telegrex.Type.Contact`     | Optional. Message is a \
                                                              shared contact, information \
                                                              about the contact
-    location	               | `Telegrex.Type.Location`	   | Optional. Message is a \
+    location                 | `Telegrex.Type.Location`    | Optional. Message is a \
                                                              shared location, \
                                                              information about the location
-    new_chat_participant     | `Telegrex.Type.User`	       | Optional. A new member \
+    new_chat_participant     | `Telegrex.Type.User`        | Optional. A new member \
                                                              was added to the group, \
                                                              information about them \
                                                              (this member may be the bot itself)
-    left_chat_participant	   | `Telegrex.Type.User`	       | Optional. A member was \
+    left_chat_participant    | `Telegrex.Type.User`        | Optional. A member was \
                                                              removed from the group, \
                                                              information about them \
                                                              (this member may be the bot itself)
-    new_chat_title	         | String	                     | Optional. A chat title \
+    new_chat_title           | String                      | Optional. A chat title \
                                                              was changed to this value
-    new_chat_photo	         | [`Telegrex.Type.PhotoSize`] | Optional. A chat photo \
+    new_chat_photo           | [`Telegrex.Type.PhotoSize`] | Optional. A chat photo \
                                                              was change to this value
-    delete_chat_photo	       | True	                       | Optional. Service message: \
+    delete_chat_photo        | True                        | Optional. Service message: \
                                                              the chat photo was deleted
-    group_chat_created	     | True	                       | Optional. Service message: \
+    group_chat_created       | True                        | Optional. Service message: \
                                                              the group has been created
-    supergroup_chat_created  | True	                       | Optional. Service message: \
+    supergroup_chat_created  | True                        | Optional. Service message: \
                                                              the supergroup has been created
-    channel_chat_created	   | True	                       | Optional. Service message: \
+    channel_chat_created     | True                        | Optional. Service message: \
                                                              the channel has been created
-    migrate_to_chat_id	     | Integer	                   | Optional. The group has \
+    migrate_to_chat_id       | Integer                     | Optional. The group has \
                                                              been migrated to a \
                                                              supergroup with the \
                                                              specified identifier, \
                                                              not exceeding 1e13 by \
                                                              absolute value
-    migrate_from_chat_id	   | Integer	                   | Optional. The supergroup \
+    migrate_from_chat_id     | Integer                     | Optional. The supergroup \
                                                              has been migrated from a \
                                                              group with the specified \
                                                              identifier, not exceeding \
@@ -187,10 +187,10 @@ defmodule Telegrex.Type do
 
     Field      | Type    | Description
     ---------: | :-----: | -----------
-    file_id	   | String  | Unique identifier for this file
+    file_id    | String  | Unique identifier for this file
     width      | Integer | Photo width
     height     | Integer | Photo height
-    file_size	 | Integer | Optional. File size
+    file_size  | Integer | Optional. File size
 
     """
     @type t :: %PhotoSize{file_id: binary, width: integer, height: integer,
@@ -206,14 +206,14 @@ defmodule Telegrex.Type do
 
     Field      | Type    | Description
     ---------: | :-----: | -----------
-    file_id	   | String  | Unique identifier for this file
-    duration	 | Integer | Duration of the audio in seconds as defined by sender
-    performer	 | String	 | Optional. Performer of the audio as defined by \
+    file_id    | String  | Unique identifier for this file
+    duration   | Integer | Duration of the audio in seconds as defined by sender
+    performer  | String	 | Optional. Performer of the audio as defined by \
                            sender or by audio tags
-    title	     | String	 | Optional. Title of the audio as defined by \
+    title      | String	 | Optional. Title of the audio as defined by \
                            sender or by audio tags
-    mime_type	 | String	 | Optional. MIME type of the file as defined by sender
-    file_size	 | Integer | Optional. File size
+    mime_type  | String  | Optional. MIME type of the file as defined by sender
+    file_size  | Integer | Optional. File size
 
     """
     @type t :: %Audio{file_id: binary, duration: integer, performer: binary,
@@ -253,12 +253,12 @@ defmodule Telegrex.Type do
 
     Field      | Type                      | Description
     ---------: | :-----------------------: | -----------
-    file_id	   | String                    | Unique identifier for this file
-    width	     | Integer  	               | Sticker width
-    height	   | Integer	                 | Sticker height
-    thumb	     | `Telegrex.Type.PhotoSize` | Optional. Sticker thumbnail in \
+    file_id    | String                    | Unique identifier for this file
+    width      | Integer                   | Sticker width
+    height     | Integer                   | Sticker height
+    thumb      | `Telegrex.Type.PhotoSize` | Optional. Sticker thumbnail in \
                                              .webp or .jpg format
-    file_size	 | Integer                   | Optional. File size
+    file_size  | Integer                   | Optional. File size
 
     """
     @type t :: %Sticker{file_id: binary, width: integer, height: integer,
@@ -274,15 +274,15 @@ defmodule Telegrex.Type do
 
     Field      | Type                      | Description
     ---------: | :-----------------------: | -----------
-    file_id	   | String                    | Unique identifier for this file
-    width	     | Integer  	               | Video width as defined by sender
-    height	   | Integer	                 | Video height as defined by sender
-    duration	 | Integer	                 | Duration of the video in seconds \
+    file_id    | String                    | Unique identifier for this file
+    width      | Integer                   | Video width as defined by sender
+    height     | Integer                   | Video height as defined by sender
+    duration   | Integer                   | Duration of the video in seconds \
                                              as defined by sender
-    thumb	     | `Telegrex.Type.PhotoSize` | Optional. Video thumbnail
-    mime_type	 | String	                   | Optional. Mime type of a file as \
+    thumb      | `Telegrex.Type.PhotoSize` | Optional. Video thumbnail
+    mime_type  | String                    | Optional. Mime type of a file as \
                                              defined by sender
-    file_size	 | Integer                   | Optional. File size
+    file_size  | Integer                   | Optional. File size
 
     """
     @type t :: %Video{file_id: binary, width: integer, height: integer,
@@ -299,10 +299,10 @@ defmodule Telegrex.Type do
 
     Field      | Type    | Description
     ---------: | :-----: | -----------
-    file_id	   | String  | Unique identifier for this file
-    duration	 | Integer | Duration of the audio in seconds as defined by sender
-    mime_type	 | String	 | Optional. Mime type of a file as defined by sender
-    file_size	 | Integer | Optional. File size
+    file_id    | String  | Unique identifier for this file
+    duration   | Integer | Duration of the audio in seconds as defined by sender
+    mime_type  | String  | Optional. Mime type of a file as defined by sender
+    file_size  | Integer | Optional. File size
 
     """
     @type t :: %Voice{file_id: binary, duration: integer, mime_type: binary,
@@ -317,10 +317,10 @@ defmodule Telegrex.Type do
 
     Field        | Type    | Description
     -----------: | :-----: | -----------
-    phone_number | String	 | Contact's phone number
-    first_name	 | String	 | Contact's first name
-    last_name	   | String	 | Optional. Contact's last name
-    user_id	     | Integer | Optional. Contact's user identifier in Telegram
+    phone_number | String  | Contact's phone number
+    first_name   | String  | Contact's first name
+    last_name    | String  | Optional. Contact's last name
+    user_id      | Integer | Optional. Contact's user identifier in Telegram
 
     """
     @type t :: %Contact{phone_number: binary, first_name: binary,
@@ -375,9 +375,9 @@ defmodule Telegrex.Type do
 
     Field       | Type                        | Description
     ----------: | :-------------------------: | -----------
-    total_count |	Integer	                    | Total number of profile pictures \
+    total_count | Integer                     | Total number of profile pictures \
                                                 the target user has
-    photos	    | [`Telegrex.Type.PhotoSize`] | Requested profile pictures \
+    photos      | [`Telegrex.Type.PhotoSize`] | Requested profile pictures \
                                                 (in up to 4 sizes each)
 
     """
@@ -396,7 +396,7 @@ defmodule Telegrex.Type do
     ----------------: | :--------: | -----------
     keyboard          |	[[String]] | Array of button rows, each represented by \
                                      an Array of Strings
-    resize_keyboard	  | Boolean    | Optional. Requests clients to resize the \
+    resize_keyboard   | Boolean    | Optional. Requests clients to resize the \
                                      keyboard vertically for optimal fit \
                                      (e.g., make the keyboard smaller if there \
                                      are just two rows of buttons). Defaults to \
@@ -437,8 +437,8 @@ defmodule Telegrex.Type do
 
     Field         | Type    | Description
     ------------: | :-----: | -----------
-    hide_keyboard |	True	  | Requests clients to hide the custom keyboard
-    selective	    | Boolean | Optional. Use this parameter if you want to hide \
+    hide_keyboard | True    | Requests clients to hide the custom keyboard
+    selective     | Boolean | Optional. Use this parameter if you want to hide \
                               keyboard for specific users only. Targets: 1) \
                               users that are @mentioned in the text of the \
                               Message object; 2) if the bot's message is a \
@@ -466,9 +466,9 @@ defmodule Telegrex.Type do
 
     Field       | Type    | Description
     ----------: | :-----: | -----------
-    force_reply |	True	  | Shows reply interface to the user, as if they \
+    force_reply | True    | Shows reply interface to the user, as if they \
                             manually selected the bot‘s message and tapped `Reply`
-    selective	  | Boolean | Optional. Use this parameter if you want to force \
+    selective   | Boolean | Optional. Use this parameter if you want to force \
                             reply from specific users only. Targets: 1) users \
                             that are @mentioned in the text of the \
                             `Telegrex.Type.Message` object; 2) if the bot's \
