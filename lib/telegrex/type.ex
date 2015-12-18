@@ -96,14 +96,14 @@ defmodule Telegrex.Type do
                                                              messages, date the \
                                                              original message was \
                                                              sent in Unix time
-    reply_to_message         | Message                      | Optional. For replies, \
+    reply_to_message         | Message                     | Optional. For replies, \
                                                              the original message. \
                                                              Note that the Message \
                                                              object in this field \
                                                              will not contain further \
                                                              reply_to_message fields \
                                                              even if it itself is a reply.
-    text                     | String                       | Optional. For text messages, \
+    text                     | String                      | Optional. For text messages, \
                                                              the actual UTF-8 text \
                                                              of the message
     audio                    | Audio                       | Optional. Message is \
@@ -230,14 +230,14 @@ defmodule Telegrex.Type do
 
     Field      | Type                      | Description
     ---------: | :-----------------------: | -----------
-    file_id	   | String                    | Unique file identifier
-    thumb	     | `Telegrex.Type.PhotoSize` | Optional. Document thumbnail as \
+    file_id    | String                    | Unique file identifier
+    thumb      | `Telegrex.Type.PhotoSize` | Optional. Document thumbnail as \
                                              defined by sender
-    file_name	 | String	                   | Optional. Original filename as \
+    file_name  | String                    | Optional. Original filename as \
                                              defined by sender
-    mime_type  | String	                   | Optional. MIME type of the file \
+    mime_type  | String                    | Optional. MIME type of the file \
                                              as defined by sender
-    file_size	 | Integer                   | Optional. File size
+    file_size  | Integer                   | Optional. File size
 
     """
     @type t :: %Document{file_id: binary, thumb: PhotoSize.t, file_name: binary,
