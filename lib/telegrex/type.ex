@@ -27,6 +27,7 @@ defmodule Telegrex.Type do
   """
 
   defmodule User do
+    @derive [Poison.Encoder]
     defstruct id: nil, first_name: nil, last_name: nil, username: nil
 
     @typedoc """
